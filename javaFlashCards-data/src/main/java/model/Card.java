@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 @EqualsAndHashCode(callSuper = true)
 public class Card extends BaseEntity {
     private String originalText;
