@@ -23,3 +23,7 @@
 hs_err_pid*
 /target/
 /.idea/
+/javaFlashCards-web/target/
+/javaFlashCards-data/target/
+/javaFlashCards-data/data.iml
+/javaFlashCards-web/web.iml
