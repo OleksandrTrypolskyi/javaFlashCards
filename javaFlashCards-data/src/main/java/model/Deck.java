@@ -2,6 +2,7 @@ package model;
 
 import lombok.*;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,8 +11,12 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode(callSuper = true)
+@Entity
+@Table(name = "decks")
 public class Deck extends BaseEntity{
+    @Column(name = "name")
     private String name;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "deck")
     private Set<Card> cards = new HashSet<>();
 
     @Builder

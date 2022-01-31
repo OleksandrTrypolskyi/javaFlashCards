@@ -2,6 +2,7 @@ package model;
 
 import lombok.*;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
@@ -9,11 +10,19 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode(callSuper = true)
+@Entity
+@Table(name = "cards")
 public class Card extends BaseEntity {
+    @Column(name = "original_text")
     private String originalText;
+    @Column(name = "translated_text")
     private String translatedText;
+    @Column(name = "creation_time")
     private LocalDateTime creationTime;
+    @Column(name = "last_review")
     private LocalDateTime lastReviewTime;
+    @ManyToOne
+    @JoinColumn(name = "deck_id")
     private Deck deck;
 
     @Builder
