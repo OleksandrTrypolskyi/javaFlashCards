@@ -17,23 +17,23 @@ public class Card extends BaseEntity {
     private String originalText;
     @Column(name = "translated_text")
     private String translatedText;
-    @Column(name = "creation_time")
-    private LocalDateTime creationTime;
-    @Column(name = "last_review")
-    private LocalDateTime lastReviewTime;
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
+    @Column(name = "last_review_at")
+    private LocalDateTime lastReviewAt;
     @ManyToOne
     @JoinColumn(name = "deck_id")
     private Deck deck;
 
     @Builder
     public Card(Long id, String originalText, String translatedText,
-                LocalDateTime creationTime, LocalDateTime lastReviewTime,
+                LocalDateTime createdAt, LocalDateTime lastReviewAt,
                 Deck deck) {
         super(id);
         this.originalText = originalText;
         this.translatedText = translatedText;
-        this.creationTime = creationTime;
-        this.lastReviewTime = lastReviewTime;
+        this.createdAt = createdAt;
+        this.lastReviewAt = lastReviewAt;
         this.deck = deck;
     }
 }
