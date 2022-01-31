@@ -12,18 +12,18 @@ public class Card extends BaseEntity {
     private String originalText;
     private String translatedText;
     private LocalDateTime creationTime;
-    private LocalDateTime last_reviewTime;
+    private LocalDateTime lastReviewTime;
     private Deck deck;
 
     @Builder
     public Card(Long id, String originalText, String translatedText,
-                LocalDateTime creationTime, LocalDateTime last_reviewTime,
+                LocalDateTime creationTime, LocalDateTime lastReviewTime,
                 Deck deck) {
         super(id);
         this.originalText = originalText;
         this.translatedText = translatedText;
         this.creationTime = creationTime;
-        this.last_reviewTime = last_reviewTime;
+        this.lastReviewTime = lastReviewTime;
         this.deck = deck;
     }
 }
